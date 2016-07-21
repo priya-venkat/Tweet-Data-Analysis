@@ -6,8 +6,6 @@ long = read.csv("/Users/Neo/Documents/LearnPython/poke_long.csv")
 coord = cbind(long,latt)
 colnames(coord) = c("Longitude","Latitude")
 
-#install.packages("maps")
-#install.packages("ggmap")
 library(maps)
 library(ggmap)
 
@@ -15,15 +13,12 @@ chicago = get_map(location = "chicago", zoom = 10)
 california = get_map(location = "california", zoom = 7)
 usa = get_map(location = "USA", zoom = 4)
 
-# ggmap(chicago)
-# ggmap(california)
-
-# Plot the first 100 motor vehicle thefts:
+# tweet locations superimposed on maps of places
 ggmap(chicago) + geom_point(data = coord, aes(x = Longitude, y = Latitude))
 ggmap(california) + geom_point(data = coord, aes(x = Longitude, y = Latitude))
 ggmap(usa) + geom_point(data = coord, aes(x = Longitude, y = Latitude), color="red")
 
-# Round our latitude and longitude to 1 digit of accuracy, and create a crime counts data frame for each area:
+# Round latitude and longitude to 1 digit of accuracy, and create a crime counts data frame for each area:
 LatLonCounts = as.data.frame(table(round(coord$Longitude,1), round(coord$Latitude,1)))
 
 #str(LatLonCounts)
