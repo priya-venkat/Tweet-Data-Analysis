@@ -1,4 +1,4 @@
-# Search for tweets about topic of desire
+# Search for tweets about topic of interest
 import tweepy
 
 # get keys from twitter app
@@ -64,7 +64,7 @@ with open(fName, 'w') as f:
             print("Downloaded {0} tweets".format(tweetCount))
             max_id = new_tweets[-1].id
         except tweepy.TweepError as e:
-            # Just exit if any error
+            # Exit if any error
             print("some error : " + str(e))
             break
 
