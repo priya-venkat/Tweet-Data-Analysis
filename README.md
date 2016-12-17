@@ -1,4 +1,4 @@
-# Twitter-Data-Analysis
+# Analysis of tweet data
 Analyzing tweets on twitter using python
 
 Learn the geolocations of tweets about a particular topic.
